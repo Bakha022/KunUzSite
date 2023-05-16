@@ -13,7 +13,7 @@ class NewsType(models.Model):
 class RegionalNews(models.Model):
     category = models.ForeignKey(NewsType, on_delete=models.CASCADE)
     newsTypes = models.CharField(max_length=300, null=True, blank=True)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null= True, blank=True)
     summary = models.CharField(max_length=500, null=True, blank=True)
     descriptation = models.CharField(max_length=300, null=True, blank=True)
     img = models.ImageField(upload_to="images/", blank=True)
