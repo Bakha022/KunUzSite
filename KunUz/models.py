@@ -12,10 +12,10 @@ class NewsType(models.Model):
 
 class RegionalNews(models.Model):
     category = models.ForeignKey(NewsType, on_delete=models.CASCADE)
-    newsTypes = models.CharField(max_length=300)
+    newsTypes = models.CharField(max_length=300, null=True, blank=True)
     title = models.CharField(max_length=200)
-    summary = models.CharField(max_length=250)
-    descriptation = models.CharField(max_length=300)
+    summary = models.CharField(max_length=500, null=True, blank=True)
+    descriptation = models.CharField(max_length=300, null=True, blank=True)
     img = models.ImageField(upload_to="images/", blank=True)
     text = models.TextField()
     dateTime = models.DateTimeField()
@@ -24,4 +24,4 @@ class RegionalNews(models.Model):
         db_table = "RegionalNews"
 
     def __str__(self):
-        return self.title
+        return self.descriptation
