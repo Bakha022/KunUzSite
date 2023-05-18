@@ -5,4 +5,4 @@ from .models import NewsType, RegionalNews
 
 class CategoryView(ListView):
     model = NewsType
-    template_name = 'home.html'
+    template_name = 'base.html'
