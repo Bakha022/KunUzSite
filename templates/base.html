@@ -11,24 +11,106 @@
     <link rel="stylesheet" href="{% static 'home/style.css' %}">
 </head>
 <body>
-    <div class="container pt-2">
-        <div class="row category align-items-center">
-            <div class="col-1 mb-3">
-                <img src="https://kun.uz/assets/3d48c862/img/kun-uz-logo.svg" />
+    <header class ="">
+        <div class="container pt-2">
+            <div class="row category align-items-center">
+                <div class="col-1 mb-3">
+                    <a href="">
+                        <img src="https://kun.uz/assets/99110d40/img/kun-uz-logo.svg"/>
+                    </a>
+                </div>
+                <div class="col-9">
+                    <ul class="mx-2 d-flex">
+                        {% for item in object_list%}
+                        <li>
+                            <a href="">{{item.category}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>  
+                <div class="col-2">
+                    <input class="qidiruv px-2 py-1" type="search" placeholder="Qidiruv">
+                </div>
             </div>
-            <div class="col-9">
-                <ul class="mx-2 d-flex">
-                    {% for item in object_list%}
-                    <li>
-                        <a href="">{{item.category}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
+        </div>
+    </header>
+
+    {% block content %}
+        
+    {% endblock %}
+
+
+
+    <div class="footer">
+        <div class="divLinks">
+            <div class="container">
+                <div class="col-6">
+                    <ul class="m-0 py-3">
+                        <li>
+                            <a href="">Sayt haqida</a>
+                        </li>
+                        <li>
+                            <a href="">RSS</a>
+                        </li>
+                        <li>
+                            <a href="">Aloqa</a>
+                        </li>
+                        <li>
+                            <a href="">Reklama</a>
+                        </li>
+                        <li>
+                            <a href="">Kun mavzulari</a>
+                            <a href=""> Kun.uz jamosi</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-2">
-                <input class="qidiruv px-2 py-1" type="search" placeholder="Qidiruv">
+        </div>
+        <div class="siteAbout pt-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="text-white">
+                            «KUN.UZ» сайтида эълон қилинган материаллардан нусха кўчириш, тарқатиш ва бошқа шаклларда фойдаланиш фақат таҳририят ёзма розилиги билан амалга оширилиши мумкин.
+                            Гувоҳнома: №0987. Берилган санаси: 22.06.2015 йил. Муассис: «WEB EXPERT» МЧЖ. Таҳририят манзили: 100043, Тошкент шаҳри, К. Ёрматов кўчаси, 12-уй. Электрон манзил: info@kun.uz.
+                            Сайтда эълон қилинаётган муаллифлик мақолаларида келтирилган фикрлар муаллифга тегишли ва улар Kun.uz таҳририяти нуқтаи назарини ифода этмаслиги мумкин.
+                            Ⓣ - мақола ва материалларда қўйилган мазкур белги уларнинг тижорат ва реклама ҳуқуқлари асосида эълон қилинганлигини билдиради. 
+                        </p>
+                    </div>
+                    <div class="col-6 icons">
+                        <div class="iCons">
+                            <a target="_blank" href="https://www.youtube.com/channel/UCVPst_iSyaVYpuOP4ogRhlw">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a target="_blank" href="https://telegram.me/kunuzofficial">
+                                <i class="bi bi-telegram"></i>
+                            </a>
+                            <a target="_blank" href="https://www.facebook.com/kunuznews/">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a target="_blank" href="https://twitter.com/KunUzNews">
+                             <i class="bi bi-twitter"></i>
+                            </a>
+                            <a target="_blank" href="https://www.instagram.com/kun.uz">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="bi bi-reception-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

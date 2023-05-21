@@ -4,7 +4,7 @@
 }
 
 
-.category ul {
+.category ul, .footer ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -27,4 +27,58 @@
     margin-bottom: 15px;
     border: 1px solid gray;
     border-radius: 20px;
+}
+
+
+.Iteryev {
+    background-color: rgb(210, 231, 231);
+}
+
+
+.footer .divLinks {
+    background-color: blue;
+}
+.footer ul a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.footer .siteAbout {
+    background-color: rgb(29, 29, 200);
+}
+
+
+
+
+.iCons {
+    position: absolute;
+    z-index: 2;
+    top: 90px;
+    left: 300px;
+    font-size: 30px;
+}
+
+.iCons i {
+    margin-right: 20px;
+}
+
+.iCons a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: 0.8s;
+}
+
+
+
+.icons {
+    position: relative;
+}
+
+.iCons a:hover {
+    display: inline-block;
+    transition: 0.8s;
+    transform: translateY(-10px);
 }

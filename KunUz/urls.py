@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import CategoryView 
+from .views import CategoryView , RegionalView
 
 urlpatterns = [
-    path('home/', CategoryView.as_view(), name="base")
-]  
+    path('base/', CategoryView.as_view(), name="base"),
+    path('home/', RegionalView, name="home")
+] 
+
+
