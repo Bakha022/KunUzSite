@@ -18,7 +18,7 @@ class RegionalNews(models.Model):
     articels = models.TextField()
     newsTypes = models.CharField(max_length=300, null=True, blank=True)
     img = models.ImageField(upload_to="images/", blank=True)
-    dateTime = models.DateTimeField()
+    create_date = models.DateTimeField(auto_now=True)
     
     class Meta:
         db_table = "RegionalNews"

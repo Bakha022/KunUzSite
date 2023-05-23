@@ -5,69 +5,47 @@
 <section class="topNews pt-1">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-9">
-                <div class="row">
-                    <div class="col-6">
-                        <img class="w-100" src="{{ one_article.img }}" alt="">
-                    </div>
-                    <div class="col-6">
-                        <div>
-                            <i class="bi bi-calendar-event"></i>
-                                {{ one_article.dateTime }}
+            <div class="col-10 oneArticles">
+                {% comment %} {% for item in one_articles %} {% endcomment %}
+                    <div class="row">   
+                        <div class="col-6">
+                            <a href="">
+                                <img class="w-100" src=" {{ one_articles.img.url }}" alt="">
+                            </a>
                         </div>
-                        <h2 class="pt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, natus.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus laudantium sit molestiae odit, laboriosam at reiciendis ipsa sapiente iure? Delectus, iure! Quibusdam enim suscipit saepe dolorem non quaerat, eius iure, repellendus alias ullam cum nemo. Inventore odit totam quae similique?</p>
+                        <div class="col-6">
+                            <a class="text-decoration-none" href="" >
+                                <div style="font-size: 15px; color: black">
+                                    <i class="bi bi-calendar-event"></i>
+                                    {{one_articles.create_date}}
+                                </div>
+                                <h2 class="pt-3 text-black">{{ one_articles.title }}</h2>
+                                <p class="text-black">{{ one_articles.description }}</p>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                {% comment %} {% endfor%} {% endcomment %}
                 <div class="row my-3">
+                    {% for items in four_articels %}
                     <div class="col-6">
                         <div class="row py-1">
                             <div class="col-4">
-                                <img class="w-100" src="img/ETAKVfv7szts-F_KK8KKRf9XhvhPLR89.jpg" alt="">
+                                <a href="">
+                                    <img class="w-100" src="{{ items.img.url }}" alt="">
+                                </a>
                             </div>
                             <div class="col-8">
-                                <i class="bi bi-calendar-event"></i>
-                            20:17/17.05.23
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, in?</p>
+                                <a class="text-decoration-none" href="">
+                                    <p style="font-size: 15px; color: black;" class="my-1"> 
+                                        <i class="bi bi-calendar-event"></i>
+                                        {{ items.create_date }}     
+                                    </p>
+                                    <h6 class="text-black">{{ items.title }}</h6>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="row py-1">
-                            <div class="col-4">
-                                <img class="w-100" src="img/ETAKVfv7szts-F_KK8KKRf9XhvhPLR89.jpg" alt="">
-                            </div>
-                            <div class="col-8">
-                                <i class="bi bi-calendar-event"></i>
-                            20:17/17.05.23
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, in?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="row py-1">
-                            <div class="col-4">
-                                <img class="w-100" src="img/ETAKVfv7szts-F_KK8KKRf9XhvhPLR89.jpg" alt="">
-                            </div>
-                            <div class="col-8">
-                                <i class="bi bi-calendar-event"></i>
-                            20:17/17.05.23
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, in?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="row py-1">
-                            <div class="col-4">
-                                <img class="w-100" src="img/ETAKVfv7szts-F_KK8KKRf9XhvhPLR89.jpg" alt="">
-                            </div>
-                            <div class="col-8">
-                                <i class="bi bi-calendar-event"></i>
-                            20:17/17.05.23
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, in?</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <section class="bigNews">
                         <div class="row align-items-center justify-content-between py-2">
@@ -80,32 +58,37 @@
                             </div>
                         </div>
                         <div class="row py-3">
-                            <div class="col-4">
-                                <img class="w-100" src="img/E4I5f_0MaNLjwujG5aZ4isU2DWpx27Re.jpg" alt="">
-                                <i class="bi bi-calendar-event"></i>
-                                20:17/17.05.23
-                                <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, voluptas!</h4>
-                            </div>
-                            <div class="col-4">
-                                <img class="w-100" src="img/E4I5f_0MaNLjwujG5aZ4isU2DWpx27Re.jpg" alt="">
-                                <i class="bi bi-calendar-event"></i>
-                                20:17/17.05.23
-                                <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, voluptas!</h4>
-                            </div>
-                            <div class="col-4">
+                            {% for editor in theEditor %}
+                                <div class="col-4">
+                                    <a class="text-decoration-none" href="">
+                                        <img class="w-100" src="{{ editor.img.url }}" alt="">
+                                    <p style="font-size: 15px; color: black" class="my-1">
+                                        <i class="bi bi-calendar-event"></i>
+                                        {{ editor.create_date }}
+                                    </p>
+                                    <h6 class="text-black"> {{ editor.title }} </h6>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                                {% comment %} <div class="col-4">
+                                    <img class="w-100" src="img/E4I5f_0MaNLjwujG5aZ4isU2DWpx27Re.jpg" alt="">
+                                    <i class="bi bi-calendar-event"></i>
+                                    20:17/17.05.23
+                                    <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, voluptas!</h4>
+                                </div> {% endcomment %}
+                            {% comment %} <div class="col-4">
                                 <img class="w-100" src="img/E4I5f_0MaNLjwujG5aZ4isU2DWpx27Re.jpg" alt="">
                                 <i class="bi bi-calendar-event"></i>
                                 20:17/17.05.23
                                 <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, voluptas!</h5>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                 </section>
             </div>
-            <div class="col-3">
-                <p class="fs-5 text-start">
-                    <i class="bi bi-circle mx-1"></i>
-                    So'nggi yangiliklar
-                </p>
+            <div class="col-2">
+                    <p><i class="bi bi-circle mx-1"></i>
+                        So'nggi yangiliklar
+                    </p>
                 <div class="row">
                     <div class="col-12 px-1 mx-3 py-2 border-bottom">
                             <i class="bi bi-calendar-event"> 20:17</i>
@@ -140,14 +123,7 @@
                         <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
                     </div>
                     <div class="col-12 py-3">
-                        <div class="card rounded-pill mt-2 btn NewNewsBtn">
-                            <div class="row justify-content-between">
-                                <div class="col-6">Ko'proq yangilik</div>
-                                <div class="col-2">
-                                    <i class="bi bi-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="rounded-5 border-1 p-2 bg-white" > Ko'proq yangiliklar <i class="bi bi-arrow-right"></i> </button>
                     </div>
                 </div>
             </div>
@@ -156,9 +132,3 @@
 </section>
 
 {% endblock content %}
-
-
-
-
-
-
