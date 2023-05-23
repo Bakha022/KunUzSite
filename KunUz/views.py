@@ -14,6 +14,7 @@ def RegionalView(request):
     object_list = NewsType.objects.all()
     one_article = RegionalNews.objects.all()[:1]
     ctx = {
+        "one_article": one_article,
         "object_list": object_list,
     }
     return render(request, 'home.html', ctx)

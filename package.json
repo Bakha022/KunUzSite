@@ -1,0 +1,28 @@
+{
+  "name": "mydjangoproject",
+  "version": "1.0.0",
+  "description": "\"kunuz site\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"kun uz clone\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bakha022/KunUzSite.git"
+  },
+  "keywords": [
+    "\"project",
+    "KunUz",
+    "stajirofka\""
+  ],
+  "author": "\"Bakha022\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bakha022/KunUzSite/issues"
+  },
+  "homepage": "https://github.com/Bakha022/KunUzSite#readme",
+  "dependencies": {
+    "jquery": "^3.7.0",
+    "slick-carousel": "^1.8.1"
+  }
+}
