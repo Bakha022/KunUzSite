@@ -36,17 +36,12 @@
 
 
 .footer .divLinks {
-    background-color: blue;
+    background-color: #1C2680;
 }
 .footer ul a {
-    margin-right: 20px;
+    margin-right: 10px;
     text-decoration: none;
     color: white;
-}
-
-
-.footer .siteAbout {
-    background-color: rgb(29, 29, 200);
 }
 
 
@@ -81,4 +76,45 @@
     display: inline-block;
     transition: 0.8s;
     transform: translateY(-10px);
+}
+
+.currentTopics a {
+    text-decoration: none;
+    color: black;
+}
+
+.interHref {
+    text-decoration: none;
+    color: black;
+}
+
+.interview {
+    background-color: rgb(210, 231, 231);
+}
+
+.interview .row img {
+    margin-left: -22px;
+    margin-top: -10px;
+}
+
+
+.footer .siteAbout {
+    background-color: #17206a;
+}
+
+
+.imgMargin {
+    margin-top: 10px;
+    margin-left: -50px;
+}
+
+.imgmarginBg {
+    background-color: rgb(209, 226, 226);
+    margin-bottom: 20px;
+}
+
+
+.warNews a {
+    text-decoration: none;
+    color: black;
 }

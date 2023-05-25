@@ -5,8 +5,7 @@
 <section class="topNews pt-1">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-10 oneArticles">
-                {% comment %} {% for item in one_articles %} {% endcomment %}
+            <div class="col-9 oneArticles">
                     <div class="row">   
                         <div class="col-6">
                             <a href="">
@@ -19,15 +18,14 @@
                                     <i class="bi bi-calendar-event"></i>
                                     {{one_articles.create_date}}
                                 </div>
-                                <h2 class="pt-3 text-black">{{ one_articles.title }}</h2>
+                                <h4 class="pt-3 text-black">{{ one_articles.title }}</h4>
                                 <p class="text-black">{{ one_articles.description }}</p>
                             </a>
                         </div>
                     </div>
-                {% comment %} {% endfor%} {% endcomment %}
-                <div class="row my-3">
+                <div class="row my-5">
                     {% for items in four_articels %}
-                    <div class="col-6">
+                    <div class="col-6 mt-3">
                         <div class="row py-1">
                             <div class="col-4">
                                 <a href="">
@@ -70,65 +68,119 @@
                                     </a>
                                 </div>
                             {% endfor %}
-                                {% comment %} <div class="col-4">
-                                    <img class="w-100" src="img/E4I5f_0MaNLjwujG5aZ4isU2DWpx27Re.jpg" alt="">
-                                    <i class="bi bi-calendar-event"></i>
-                                    20:17/17.05.23
-                                    <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, voluptas!</h4>
-                                </div> {% endcomment %}
-                            {% comment %} <div class="col-4">
-                                <img class="w-100" src="img/E4I5f_0MaNLjwujG5aZ4isU2DWpx27Re.jpg" alt="">
-                                <i class="bi bi-calendar-event"></i>
-                                20:17/17.05.23
-                                <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, voluptas!</h5>
-                            </div> {% endcomment %}
                         </div>
                 </section>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                     <p><i class="bi bi-circle mx-1"></i>
                         So'nggi yangiliklar
                     </p>
                 <div class="row">
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 px-1 mx-3 py-2 border-bottom">
-                            <i class="bi bi-calendar-event"> 20:17</i>
-                        <p class="p-0 m-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, exercitationem.</p>
-                    </div>
-                    <div class="col-12 py-3">
+                    {% for new in newNews %}
+                        <a class="text-decoration-none text-black" href="">
+                            <div class="col-12 py-2  ms-3 my-1 border-bottom">
+                                <i style="font-size: 15px;" class="bi bi-calendar-event"> {{ new.create_date.date }} </i>
+                                <p class="p-0 my-2"> {{ new.title }} </p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                    <div class="col-12 py-3 ms-3 my-1">
                         <button class="rounded-5 border-1 p-2 bg-white" > Ko'proq yangiliklar <i class="bi bi-arrow-right"></i> </button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="currentTopics">
+            <div class="container">
+                <p class="fs-5 text-start">
+                    <i class="bi bi-circle mx-1"></i>
+                    Dolzarb Mavzular
+                </p>
+                <div class="row">
+                        <div class="col-6">
+                            <a href="">
+                                <img class="w-100" src="{{ currentNews.img.url }}" alt="">
+                                <h4 class="py-1"> {{ currentNews.title }} </h4>
+                                <p> {{ currentNews.description }} </p>
+                            </a>
+                        </div>
+                    <div class="col-6">
+                        <div class="row">
+                            {% for singleItem in singleCurrent %}
+                            <div class="col-6">
+                                <a href="">
+                                    <img class="w-100" src="{{ singleItem.img.url }}" alt="">
+                                    <h6 class="py-1"> {{ singleItem.title }}</h6>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     </div>
 </section>
 
+<section class="interview my-3 py-4">
+    <div class="container">
+        <div class="row justify-content-between my-3">
+            <div class="col-6">
+                <p class="fs-5 text-start">
+                    <i class="bi bi-circle mx-1"></i>
+                    Intervyu
+                </p>
+            </div>
+            <div class="col-6 text-end">
+                <a class="text-decoration-none text-black" href="">
+                    Intervyu
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in interview %}
+            <div class="col-3">
+                <a class="interHref" href="">
+                    <div class="bg-white px-2">
+                        <img class="w-100 mb-1" src="{{ i.img.url }}" alt="">
+                        <p class="my-2"> {{ i.title }} </p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="warNews my-5">
+    <div class="container">
+        <p class="fs-5 text-start">
+            <i class="bi bi-circle mx-1"></i>
+            Rossiya - Ukraine
+        </p>
+        <div class="row">
+            <div class="col-6 imgmarginBg">
+                <a href="">
+                    <img class="w-100 imgMargin" src="{{ warNews_1.img.url }}" alt="">
+                    <p class="mt-5">{{ warNews_1.title }}</p>
+                </a>
+            </div>
+            <div class="col-6">
+                {% for i in warNews %}
+                <a href="">
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <img class="w-100" src=" {{ i.img.url }} " alt="">
+                        </div>
+                        <div class="col-8">
+                            <p> {{ i.title }} </p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </diw>
+    </div>
+</section>
 {% endblock content %}
